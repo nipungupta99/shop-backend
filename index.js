@@ -3,11 +3,13 @@ import cors from 'cors';
 import productRoutes from './routes/products.route.js'
 import authRoutes from './routes/auth.route.js'
 import mongoose from 'mongoose';
+import dotenv from 'dotenv'
 // port number
 const port = 5000;
+dotenv.config();
 const app = express();
 
-mongoose.connect('mongodb+srv://nipungupta99:nipungupta99@cluster0.igswkzd.mongodb.net/?retryWrites=true&w=majority', (err) => {console.log('connected to mongoose', err)});
+mongoose.connect(process.env.DB_CONNECTION_STRING, (err) => {console.log('connected to mongoose', err)});
 
 // Adding middelwares to express
 app.use(express.json());
