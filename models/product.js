@@ -5,14 +5,14 @@ const productSchema = mongoose.Schema({
   description: String,
   heroImageURL: String,
   galleryImages: [String],
-  sku: String,
   stockQuantity: Number,
   category: String,
   brand: String,
-  type: { type: String, enum: ["simple", "variable"] },
-  price: { type: Number },
+  price: { type: Number  },
   discountedPrice: { type: Number },
-  variations: [{ name: String, price: Number, discountedPrice: Number , heroImageUrl:String }],
+  createdBy: {
+    type:String,
+  }
 });
 
 const productModel = mongoose.model("product", productSchema);

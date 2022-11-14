@@ -15,9 +15,9 @@ mongoose.connect(process.env.DB_CONNECTION_STRING, (err) => {console.log('connec
 app.use(express.json());
 app.use(cors());
 
-
 app.use("/auth", authRoutes);
-app.use('/products', productRoutes)
+app.use('/products', productRoutes);
+
 app.get('/', (req, res) => {
   res.send('404 not found');
 })
