@@ -10,9 +10,6 @@ const productSchema = mongoose.Schema({
   brand: String,
   price: { type: Number  },
   discountedPrice: { type: Number },
-  createdBy: {
-    type:String,
-  }
 });
 
 const productModel = mongoose.model("product", productSchema);

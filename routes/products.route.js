@@ -4,10 +4,8 @@ const router = express.Router();
 
 
 // Show Specific Category's Products & Search
-router.post("/category", getProductCategories);
+router.get("/category", getProductCategories);
 router.post("/search", searchProducts);
-
-
 // Product Routes
 router.post("/", createProduct);
 router.get("/", getAllProducts);
